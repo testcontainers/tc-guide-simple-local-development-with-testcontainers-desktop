@@ -1,0 +1,1 @@
+-- update products set price = -price where price < 0;
