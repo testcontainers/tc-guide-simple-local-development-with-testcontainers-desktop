@@ -47,7 +47,7 @@ Once the Testcontainers desktop app is started it will automatically detect loca
 and is configured to use it. You can choose which Docker runtime to use by Testcontainers libraries by selecting
 from the menu options as shown below:
 
-![Switching container runtimes](./images/tcd-switch-runtimes.png)
+image::images/tcd-switch-runtimes.png[]
 
 You can also create your free https://testcontainers.com/cloud/[Testcontainers Cloud] account and choose to save local resources
 by running your containers in the cloud instead of running them on your computer.
@@ -104,7 +104,7 @@ $ psql -h localhost -p 5432 -U test -d test
 
 Here is an example of connecting to the database from Intellij IDEA Ultimate Database Tools:
 
-![Connecting to DB using fixed ports](./images/tcd-fixed-port-connection.png)
+image::images/tcd-fixed-port-connection.png[]
 
 The ability to use fixed ports and connect to those services is immensely helpful during the development time.
 
@@ -146,7 +146,7 @@ class ProductRepositoryTest {
 
 Let's open Testcontainers desktop app and enable *Freeze containers shutdown*.
 
-![Freeze containers](./images/tcd-freeze-containers.png)
+image::images/tcd-freeze-containers.png[]
 
 After enabling "Freeze containers shutdown", run the *ProductRepositoryTest* from your IDE, and the app will prevent its shutdown,
 effectively keeping the test running indefinitely. Once you're done with your investigation, uncheck the "freeze" button
@@ -171,7 +171,7 @@ Since you are using the https://testcontainers.com/desktop/[Testcontainers deskt
 the *testcontainers.reuse.enable* flag is set automatically for your dev environment.
 You can enable or disable it by clicking on *Enable reusable containers* option under *Preferences*.
 
-![Reusing containers](./images/tcd-reuse.png)
+image::images/tcd-reuse.png[]
 
 When the reuse feature is enabled, you only need to configure which containers should be reused using the Testcontainers API.
 While using Testcontainers for Java you can achieve this using *.withReuse(true)* as follows:
