@@ -59,7 +59,7 @@ onto the host machine so that there won't be any port conflicts.
 However, during development time you may want to connect to those services to inspect the data or troubleshoot surprising behavior.
 It would be cumbersome to always check for which random port is assigned on the host for a container and connect to it.
 
-Testcontainers Desktop makes it easy to use fixed ports for the container services so that you can always connect to
+The Testcontainers Desktop app makes it easy to use fixed ports for the container services so that you can always connect to
 those services using the same configured fixed port.
 
 For example, in our Spring Boot application we are using PostgreSQL database. You can start the application by running
@@ -144,7 +144,7 @@ class ProductRepositoryTest {
 }
 ----
 
-Let's open Testcontainers Desktop and enable *Freeze containers shutdown*.
+Let's open the Testcontainers Desktop app and enable *Freeze containers shutdown*.
 
 image::images/tcd-freeze-containers.png[]
 
