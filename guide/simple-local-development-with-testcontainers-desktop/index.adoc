@@ -1,8 +1,8 @@
 ---
-title: "Simple local development with Testcontainers desktop app"
+title: "Simple local development with Testcontainers Desktop"
 date: 2023-08-14T09:39:58+05:30
 draft: false
-description: "In this guide, you will learn how to use Testcontainers desktop app for local development and explore various features that can help you to easily debug and resolve any issues."
+description: "In this guide, you will learn how to use Testcontainers Desktop for local development and explore various features that can help you to easily debug and resolve any issues."
 repo: https://github.com/testcontainers/tc-guide-simple-local-development-with-testcontainers-desktop
 languages:
   - Java
@@ -14,13 +14,13 @@ tags:
 :toclevels: 2
 :codebase: https://raw.githubusercontent.com/testcontainers/tc-guide-simple-local-development-with-testcontainers-desktop/main
 
-In this guide, you will learn how to use the Testcontainers desktop app for local development and
+In this guide, you will learn how to use the Testcontainers Desktop for local development and
 explore features that help you easily debug and resolve issues.
 
 == Prerequisites
-The https://testcontainers.com/desktop/[Testcontainers desktop app] is a free companion app for open source Testcontainers libraries
+The https://testcontainers.com/desktop/[Testcontainers Desktop] is a free companion app for open source Testcontainers libraries
 that makes local development and testing with real dependencies simple. You can use the app with any Testcontainers language.
-In this guide we will explore the Testcontainers desktop app features using a Java/Spring Boot application.
+In this guide, we will explore the Testcontainers Desktop features using a Java/Spring Boot application.
 So, you need the following tools installed on your computer:
 
 * Java 17+
@@ -29,21 +29,21 @@ So, you need the following tools installed on your computer:
 
 == What we are going to achieve in this guide
 
-We will learn how to install and get started with the Testcontainers desktop app and explore the following features:
+We will learn how to install and get started with the Testcontainers Desktop and explore the following features:
 
 * https://newsletter.testcontainers.com/announcements/switch-container-runtimes-and-burst-to-the-cloud[Switch container runtimes and burst to the cloud]
 * https://newsletter.testcontainers.com/announcements/set-fixed-ports-to-easily-debug-development-services[Set fixed ports to easily debug development services]
 * https://newsletter.testcontainers.com/announcements/freeze-containers-to-prevent-their-shutdown-while-you-debug[Freeze containers to prevent their shutdown while you debug]
 * https://newsletter.testcontainers.com/announcements/enable-reusable-containers-with-a-single-click[Enable reusable containers with a single click]
 
-== Installing Testcontainers desktop app
-You can go to https://testcontainers.com/desktop/ and download your OS specific desktop client application and install it.
-If you are using MacOS, then you can install the Testcontainers desktop app easily using
+== Installing Testcontainers Desktop
+You can go to https://testcontainers.com/desktop/ and download your OS-specific client application and install it.
+If you are using MacOS, then you can install the Testcontainers Desktop easily using
 *brew install atomicjar/tap/testcontainers-desktop* command.
 
 
 == Switching container runtimes
-Once the Testcontainers desktop app is started, it will automatically detect locally installed Docker runtime(s)
+Once the Testcontainers Desktop is started, it will automatically detect locally installed Docker runtime(s)
 and is configured to use it. You can choose which Docker runtime to use by Testcontainers libraries by selecting
 from the menu options as shown below:
 
@@ -59,16 +59,16 @@ onto the host machine so that there won't be any port conflicts.
 However, during development time you may want to connect to those services to inspect the data or troubleshoot surprising behavior.
 It would be cumbersome to always check for which random port is assigned on the host for a container and connect to it.
 
-Testcontainers desktop app makes it easy to use fixed ports for the container services so that you can always connect to
+Testcontainers Desktop makes it easy to use fixed ports for the container services so that you can always connect to
 those services using the same configured fixed port.
 
 For example, in our Spring Boot application we are using PostgreSQL database. You can start the application by running
 *TestApplication.java* from your IDE. We have leveraged https://www.atomicjar.com/2023/05/spring-boot-3-1-0-testcontainers-for-testing-and-local-development/[Spring Boot's support for Testcontainers]
 to automatically start the required services (in our case PostgreSQL).
 
-We can use the Testcontainers desktop app fixed port support to connect to the PostgreSQL database running as a Docker container.
+We can use the Testcontainers Desktop fixed port support to connect to the PostgreSQL database running as a Docker container.
 
-Click on *Testcontainers desktop app* -> select *Services* -> *Open config location*.
+Click on *Testcontainers Desktop* -> select *Services* -> *Open config location*.
 
 In the opened directory there would be a *postgres.toml.example* file.
 Rename it to *postgres.toml* file, and it should contain the following configuration:
@@ -144,7 +144,7 @@ class ProductRepositoryTest {
 }
 ----
 
-Let's open Testcontainers desktop app and enable *Freeze containers shutdown*.
+Let's open Testcontainers Desktop and enable *Freeze containers shutdown*.
 
 image::images/tcd-freeze-containers.png[]
 
@@ -167,7 +167,7 @@ the application locally. Recreating the containers for every code change might s
 One technique that you can apply to speed up testing and local development is using
 the https://java.testcontainers.org/features/reuse/[reusable containers] experimental feature.
 
-Since you are using the https://testcontainers.com/desktop/[Testcontainers desktop app],
+Since you are using the https://testcontainers.com/desktop/[Testcontainers Desktop],
 the *testcontainers.reuse.enable* flag is set automatically for your dev environment.
 You can enable or disable it by clicking on *Enable reusable containers* option under *Preferences*.
 
@@ -217,10 +217,10 @@ See the https://newsletter.testcontainers.com/announcements/enable-reusable-cont
 
 == Summary
 Testcontainers libraries help you test your application with real dependencies while speeding up and
-simplifying local development. Various features of the Testcontainers desktop app greatly simplify running and
+simplifying local development. Various features of the Testcontainers Desktop greatly simplify running and
 debugging your application right from your IDE.
 
-Download the https://testcontainers.com/desktop/[Testcontainers desktop app] and start your development leveraging
+Download the https://testcontainers.com/desktop/[Testcontainers Desktop] and start your development leveraging
 Testcontainers libraries of your favorite programming language.
 To learn more about Testcontainers visit https://testcontainers.com/ .
 
