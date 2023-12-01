@@ -91,7 +91,7 @@ Assume we have defined our PostgreSQL containers as follows:
 @Bean
 @ServiceConnection
 PostgreSQLContainer<?> postgresContainer() {
-   return new PostgreSQLContainer<>("postgres:15.2-alpine");
+   return new PostgreSQLContainer<>("postgres:16-alpine");
 }
 ----
 
@@ -130,7 +130,7 @@ class ProductRepositoryTest {
    @Container
    @ServiceConnection
    static PostgreSQLContainer<?> postgres =
-                      new  PostgreSQLContainer<>("postgres:15.2-alpine");
+                      new  PostgreSQLContainer<>("postgres:16-alpine");
 
    @Autowired
    ProductRepository repository;
@@ -179,7 +179,7 @@ While using Testcontainers for Java you can achieve this using *.withReuse(true)
 [source,java]
 ----
 PostgreSQLContainer<?> postgresContainer() {
-   return new PostgreSQLContainer<>("postgres:15.2-alpine")
+   return new PostgreSQLContainer<>("postgres:16-alpine")
            .withReuse(true);
 }
 ----
@@ -196,7 +196,7 @@ You can enable reuse while using special JDBC URL by appending *TC_REUSABLE=true
 @DataJpaTest
 @TestPropertySource(properties = {
   "spring.test.database.replace=none",
-  "spring.datasource.url=jdbc:tc:postgresql:15.2-alpine:///db?TC_REUSABLE=true"
+  "spring.datasource.url=jdbc:tc:postgresql:16-alpine:///db?TC_REUSABLE=true"
 })
 class ProductRepositoryTest {
 
